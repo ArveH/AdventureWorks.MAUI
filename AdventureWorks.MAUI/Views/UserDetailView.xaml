@@ -6,7 +6,7 @@
              Title="User Information">
 
     <Border Style="{StaticResource Border.Page}">
-        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
           ColumnDefinitions="Auto, *"
           Style="{StaticResource Grid.Page}">
 
@@ -68,10 +68,63 @@
         <Switch Grid.Row="6"
                 Grid.Column="1"/>
 
-        <partial:AddressView Grid.Row="9"
+        <Label Text="Employee Type"
+               Grid.Row="7" />
+        <FlexLayout Grid.Row="7"
+                    Grid.Column="1"
+                    Wrap="Wrap"
+                    Direction="Row">
+            <HorizontalStackLayout>
+                <Label Text="Full-Time" />
+                <RadioButton x:Name="FullTime"
+                             IsChecked="{Binding UserObject.IsFullTime}"
+                             GroupName="EmployeeType" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Part-Time" />
+                <RadioButton IsChecked="{Binding UserObject.IsFullTime, Converter={StaticResource invertedBoolean}}"
+                             GroupName="EmployeeType" />
+            </HorizontalStackLayout>
+        </FlexLayout>
+
+        <Label Text="Birth Date"
+               Grid.Row="8" />
+        <DatePicker Grid.Row="8"
+                    Grid.Column="1"
+                    HorizontalOptions="Start" />
+
+        <Label Text="Start Time"
+               Grid.Row="9" />
+        <TimePicker Grid.Row="9"
+                    Grid.Column="1"
+                    Time="06:00:00" />
+
+        <Label Text="Phone"
+               Grid.Row="10" />
+        <FlexLayout Grid.Row="10"
+                    Grid.Column="1"
+                    Wrap="Wrap"
+                    Direction="Row">
+            <HorizontalStackLayout>
+                <Entry MinimumWidthRequest="120"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Picker>
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Home</x:String>
+                            <x:String>Mobile</x:String>
+                            <x:String>Other</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </HorizontalStackLayout>
+        </FlexLayout>
+
+        <partial:AddressView Grid.Row="14"
                              Grid.ColumnSpan="2"/>
 
-        <HorizontalStackLayout Grid.Row="11"
+        <HorizontalStackLayout Grid.Row="15"
                                Grid.Column="1">
             <Button Text="Save"/>
             <Button Text="Cancel"/>
