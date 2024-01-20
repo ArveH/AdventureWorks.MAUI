@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdventureWorks.MAUI.ViewsPartial.AddressView">
+
+  <Frame>
+    <StackLayout>
+      <Label Text="Address Information"
+             FontSize="Small"
+             FontAttributes="Bold" />
+      <BoxView Color="Gray"
+               HeightRequest="1"
+               HorizontalOptions="Fill" />
+      <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+            ColumnDefinitions="Auto,*"
+            Style="{StaticResource Grid.Page}">
+        <Label Grid.Row="0"
+               Text="Street" />
+        <Entry Grid.Row="0"
+               Grid.Column="1"
+               Text="" />
+        <Label Grid.Row="1"
+               Text="City" />
+        <Entry Grid.Row="1"
+               Grid.Column="1"
+               Text="" />
+        <Label Grid.Row="2"
+               Text="State/Province" />
+        <Entry Grid.Row="2"
+               Grid.Column="1"
+               Text="" />
+        <Label Grid.Row="3"
+               Text="Postal Code" />
+        <Entry Grid.Row="3"
+               Grid.Column="1"
+               Text="" />
+      </Grid>
+    </StackLayout>
+  </Frame>
+
+</ContentView>

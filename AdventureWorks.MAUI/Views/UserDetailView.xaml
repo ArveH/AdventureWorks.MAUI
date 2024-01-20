@@ -5,7 +5,8 @@
              xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
              Title="User Information">
 
-    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+    <Border Style="{StaticResource Border.Page}">
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
           ColumnDefinitions="Auto, *"
           Style="{StaticResource Grid.Page}">
 
@@ -14,33 +15,33 @@
                             ViewTitle="User Information"
                             ViewDescription="Use this Screen to Modify User Information."/>
 
-        <Label Grid.Row="3"
+        <Label Grid.Row="1"
                Text="Login ID"/>
-        <VerticalStackLayout Grid.Row="3"
+        <VerticalStackLayout Grid.Row="1"
                              Grid.Column="1">
             <Entry Text=""/>
             <Label FontSize="Micro"
                    Text="Please use a combination of letters and numbers."/>
         </VerticalStackLayout>
-        <Label Grid.Row="4"
+        <Label Grid.Row="2"
                Text="First Name"/>
+        <Entry Grid.Row="2"
+               Grid.Column="1"
+               Text=""/>
+        <Label Grid.Row="3"
+               Text="Last Name"/>
+        <Entry Grid.Row="3"
+               Grid.Column="1"
+               Text=""/>
+        <Label Grid.Row="4"
+               Text="Email Address"/>
         <Entry Grid.Row="4"
                Grid.Column="1"
                Text=""/>
-        <Label Grid.Row="5"
-               Text="Last Name"/>
-        <Entry Grid.Row="5"
-               Grid.Column="1"
-               Text=""/>
-        <Label Grid.Row="6"
-               Text="Email Address"/>
-        <Entry Grid.Row="6"
-               Grid.Column="1"
-               Text=""/>
 
-        <Label Grid.Row="7"
+        <Label Grid.Row="5"
                Text="Is Enrolled?"/>
-        <FlexLayout Grid.Row="7"
+        <FlexLayout Grid.Row="5"
                     Grid.Column="1"
                     Wrap="Wrap"
                     Direction="Row">
@@ -62,11 +63,15 @@
             </HorizontalStackLayout>
         </FlexLayout>
 
-        <HorizontalStackLayout Grid.Row="8"
+        <partial:AddressView Grid.Row="6"
+                             Grid.ColumnSpan="2"/>
+
+        <HorizontalStackLayout Grid.Row="7"
                                Grid.Column="1">
             <Button Text="Save"/>
             <Button Text="Cancel"/>
         </HorizontalStackLayout>
     </Grid>
+    </Border>
 
 </ContentPage>

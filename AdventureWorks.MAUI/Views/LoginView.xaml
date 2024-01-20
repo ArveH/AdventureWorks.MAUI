@@ -5,30 +5,32 @@
              xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
              Title="Login">
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto"
-          ColumnDefinitions="Auto,*"
-          Style="{StaticResource Grid.Page}">
+    <Border Style="{StaticResource Border.Page}">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+              ColumnDefinitions="Auto,*"
+              Style="{StaticResource Grid.Page}">
 
-        <partial:HeaderView Grid.Row="0"
-                            Grid.ColumnSpan="2"
-                            ViewTitle="Login"
-                            ViewDescription="Use this screen to login to this application." />
+            <partial:HeaderView Grid.Row="0"
+                                Grid.ColumnSpan="2"
+                                ViewTitle="Login"
+                                ViewDescription="Use this screen to login to this application." />
 
-        <Label Grid.Row="1"
-               Text="Login ID" />
-        <Entry Grid.Row="1"
-               Grid.Column="1"
-               Text="" />
-        <Label Grid.Row="2"
-               Text="Password" />
-        <Entry Grid.Row="2"
-               Grid.Column="1"
-               IsPassword="True" />
-        <HorizontalStackLayout Grid.Row="3"
-                               Grid.Column="1">
-            <Button Text="Login" />
-            <Button Text="Cancel" />
-        </HorizontalStackLayout>
-    </Grid>
+            <Label Grid.Row="1"
+                   Text="Login ID" />
+            <Entry Grid.Row="1"
+                   Grid.Column="1"
+                   Text="" />
+            <Label Grid.Row="2"
+                   Text="Password" />
+            <Entry Grid.Row="2"
+                   Grid.Column="1"
+                   IsPassword="True" />
+            <HorizontalStackLayout Grid.Row="3"
+                                   Grid.Column="1">
+                <Button Text="Login" />
+                <Button Text="Cancel" />
+            </HorizontalStackLayout>
+        </Grid>
+    </Border>
 
 </ContentPage>

@@ -18,6 +18,21 @@
         <Setter Property="Padding"
                 Value="{StaticResource DefaultSpacingForGrid}"/>
     </Style>
+
+    <Style TargetType="Border"
+           x:Key="Border.Page">
+        <Setter Property="Stroke"
+                Value="LightGray" />
+        <Setter Property="StrokeThickness"
+                Value="1" />
+        <Setter Property="Margin"
+                Value="5" />
+        <Setter Property="HorizontalOptions"
+                Value="Fill" />
+        <Setter Property="VerticalOptions"
+                Value="Fill" />
+    </Style>
+
     <Style TargetType="Label">
         <Setter Property="VerticalTextAlignment"
                 Value="Center"/>
