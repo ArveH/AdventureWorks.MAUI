@@ -4,12 +4,12 @@
              x:Class="AdventureWorks.MAUI.MainPage"
              Title="Home">
 
+    <ContentPage.Resources>
+    </ContentPage.Resources>
+
     <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
           ColumnDefinitions="Auto, *"
-          ColumnSpacing="10"
-          RowSpacing="10"
-          Margin="10"
-          Padding="10">
+          Style="{StaticResource Grid.Page}">
         <Label Grid.Row="0"
                Grid.ColumnSpan="2"
                Text="User Information"
@@ -54,27 +54,26 @@
                     Grid.Column="1"
                     Wrap="Wrap"
                     Direction="Row">
-            <HorizontalStackLayout Spacing="5">
+            <HorizontalStackLayout>
                 <Label Text="401k?"/>
                 <CheckBox IsChecked="True"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5">
+            <HorizontalStackLayout>
                 <Label Text="Flex Time?"/>
                 <CheckBox/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5">
+            <HorizontalStackLayout>
                 <Label Text="Health Care?"/>
                 <CheckBox IsChecked="True"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5">
+            <HorizontalStackLayout>
                 <Label Text="Health Savings Account?"/>
                 <CheckBox IsChecked="True"/>
             </HorizontalStackLayout>
         </FlexLayout>
 
         <HorizontalStackLayout Grid.Row="8"
-                               Grid.Column="1"
-                               Spacing="5">
+                               Grid.Column="1">
             <Button Text="Save"/>
             <Button Text="Cancel"/>
         </HorizontalStackLayout>
