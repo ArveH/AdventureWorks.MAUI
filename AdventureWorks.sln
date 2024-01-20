@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.MAUI", "AdventureWorks.MAUI\AdventureWorks.MAUI.csproj", "{49C9A382-FDBF-4F50-A948-32E9EF7675D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.EntityLayer", "AdventureWorks.EntityLayer\AdventureWorks.EntityLayer.csproj", "{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{49C9A382-FDBF-4F50-A948-32E9EF7675D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49C9A382-FDBF-4F50-A948-32E9EF7675D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{49C9A382-FDBF-4F50-A948-32E9EF7675D5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
