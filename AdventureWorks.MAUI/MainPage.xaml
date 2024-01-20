@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdventureWorks.MAUI.MainPage"
+             Title="Home">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+          ColumnDefinitions="Auto, *"
+          ColumnSpacing="10"
+          RowSpacing="10"
+          Margin="10"
+          Padding="10">
+        <Label Grid.Row="0"
+               Grid.ColumnSpan="2"
+               Text="User Information"
+               FontSize="Title"/>
+        <Label Grid.Row="1"
+               Grid.ColumnSpan="2"
+               Text="Use this Screen to Modify User Information"
+               FontSize="Body"/>
+
+        <BoxView Grid.Row="2"
+                 Grid.ColumnSpan="2"
+                 Margin="0,0,0,20"
+                 HeightRequest="1"/>
+
+        <Label Grid.Row="3"
+               Text="Login ID"/>
+        <VerticalStackLayout Grid.Row="3"
+                             Grid.Column="1">
+            <Entry Text=""/>
+            <Label FontSize="Micro"
+                   Text="Please use a combination of letters and numbers."/>
+        </VerticalStackLayout>
+        <Label Grid.Row="4"
+               Text="First Name"/>
+        <Entry Grid.Row="4"
+               Grid.Column="1"
+               Text=""/>
+        <Label Grid.Row="5"
+               Text="Last Name"/>
+        <Entry Grid.Row="5"
+               Grid.Column="1"
+               Text=""/>
+        <Label Grid.Row="6"
+               Text="Email Address"/>
+        <Entry Grid.Row="6"
+               Grid.Column="1"
+               Text=""/>
+
+        <Label Grid.Row="7"
+               Text="Is Enrolled?"/>
+        <FlexLayout Grid.Row="7"
+                    Grid.Column="1"
+                    Wrap="Wrap"
+                    Direction="Row">
+            <HorizontalStackLayout Spacing="5">
+                <Label Text="401k?"/>
+                <CheckBox IsChecked="True"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="5">
+                <Label Text="Flex Time?"/>
+                <CheckBox/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="5">
+                <Label Text="Health Care?"/>
+                <CheckBox IsChecked="True"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="5">
+                <Label Text="Health Savings Account?"/>
+                <CheckBox IsChecked="True"/>
+            </HorizontalStackLayout>
+        </FlexLayout>
+
+        <HorizontalStackLayout Grid.Row="8"
+                               Grid.Column="1"
+                               Spacing="5">
+            <Button Text="Save"/>
+            <Button Text="Cancel"/>
+        </HorizontalStackLayout>
+
+
+    </Grid>
+
+</ContentPage>
