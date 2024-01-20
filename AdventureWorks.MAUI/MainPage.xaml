@@ -4,81 +4,9 @@
              x:Class="AdventureWorks.MAUI.MainPage"
              Title="Home">
 
-    <ContentPage.Resources>
-    </ContentPage.Resources>
-
-    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-          ColumnDefinitions="Auto, *"
-          Style="{StaticResource Grid.Page}">
-        <Label Grid.Row="0"
-               Grid.ColumnSpan="2"
-               Text="User Information"
-               FontSize="Title"/>
-        <Label Grid.Row="1"
-               Grid.ColumnSpan="2"
-               Text="Use this Screen to Modify User Information"
-               FontSize="Body"/>
-
-        <BoxView Grid.Row="2"
-                 Grid.ColumnSpan="2"
-                 Margin="0,0,0,20"
-                 HeightRequest="1"/>
-
-        <Label Grid.Row="3"
-               Text="Login ID"/>
-        <VerticalStackLayout Grid.Row="3"
-                             Grid.Column="1">
-            <Entry Text=""/>
-            <Label FontSize="Micro"
-                   Text="Please use a combination of letters and numbers."/>
-        </VerticalStackLayout>
-        <Label Grid.Row="4"
-               Text="First Name"/>
-        <Entry Grid.Row="4"
-               Grid.Column="1"
-               Text=""/>
-        <Label Grid.Row="5"
-               Text="Last Name"/>
-        <Entry Grid.Row="5"
-               Grid.Column="1"
-               Text=""/>
-        <Label Grid.Row="6"
-               Text="Email Address"/>
-        <Entry Grid.Row="6"
-               Grid.Column="1"
-               Text=""/>
-
-        <Label Grid.Row="7"
-               Text="Is Enrolled?"/>
-        <FlexLayout Grid.Row="7"
-                    Grid.Column="1"
-                    Wrap="Wrap"
-                    Direction="Row">
-            <HorizontalStackLayout>
-                <Label Text="401k?"/>
-                <CheckBox IsChecked="True"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout>
-                <Label Text="Flex Time?"/>
-                <CheckBox/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout>
-                <Label Text="Health Care?"/>
-                <CheckBox IsChecked="True"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout>
-                <Label Text="Health Savings Account?"/>
-                <CheckBox IsChecked="True"/>
-            </HorizontalStackLayout>
-        </FlexLayout>
-
-        <HorizontalStackLayout Grid.Row="8"
-                               Grid.Column="1">
-            <Button Text="Save"/>
-            <Button Text="Cancel"/>
-        </HorizontalStackLayout>
-
-
-    </Grid>
+    <Label Text="{StaticResource ApplicationTitle}"
+           FontSize="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="Center" />
 
 </ContentPage>
