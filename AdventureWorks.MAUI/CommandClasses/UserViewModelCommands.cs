@@ -38,8 +38,8 @@ public class UserViewModelCommands : UserViewModel
     #endregion
 
     #region Commands
-    public ICommand SaveCommand { get; private set; }
-    public ICommand EditCommand { get; private set; }
+    public ICommand? SaveCommand { get; private set; }
+    public ICommand? EditCommand { get; private set; }
     #endregion
 
     #region Init Method

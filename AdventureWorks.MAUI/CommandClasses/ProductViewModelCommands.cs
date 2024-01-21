@@ -18,8 +18,8 @@ public class ProductViewModelCommands : ProductViewModel
     #endregion
 
     #region Commands
-    public ICommand SaveCommand { get; private set; }
-    public ICommand EditCommand { get; private set; }
+    public ICommand? SaveCommand { get; private set; }
+    public ICommand? EditCommand { get; private set; }
     #endregion
 
     #region Private Variables
