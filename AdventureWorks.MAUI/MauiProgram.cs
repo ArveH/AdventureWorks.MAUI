@@ -1,6 +1,7 @@
 ﻿using AdventureWorks.DataLayer;
 using AdventureWorks.EntityLayer;
 using AdventureWorks.MAUI.Views;
+using AdventureWorks.MAUI.CommandClasses;
 using AdventureWorks.ViewModelLayer;
 using Common.Library;
 using Microsoft.Extensions.Logging;
@@ -28,7 +29,7 @@ namespace AdventureWorks.MAUI
             builder.Services.AddScoped<IRepository<EntityLayer.Color>, ColorRepository>();
             builder.Services.AddScoped<IRepository<PhoneType>, PhoneTypeRepository>();
 
-            builder.Services.AddScoped<UserViewModel>();
+            builder.Services.AddScoped<UserViewModelCommands>();
             builder.Services.AddScoped<UserDetailView>();
 
 #if WINDOWS

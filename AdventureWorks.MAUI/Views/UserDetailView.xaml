@@ -4,8 +4,8 @@
              x:Class="AdventureWorks.MAUI.Views.UserDetailView"
              xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
              xmlns:converters="clr-namespace:AdventureWorks.MAUI.Converters"
-             xmlns:vm="clr-namespace:AdventureWorks.ViewModelLayer;assembly=AdventureWorks.ViewModelLayer"
-             x:DataType="vm:UserViewModel"
+             xmlns:vm="clr-namespace:AdventureWorks.MAUI.CommandClasses"
+             x:DataType="vm:UserViewModelCommands"
              Title="User Information">
 
     <ContentPage.Resources>
@@ -132,7 +132,7 @@
         <HorizontalStackLayout Grid.Row="15"
                                Grid.Column="1">
             <Button Text="Save"
-                    Clicked="SaveButton_Clicked"/>
+                    Command="{Binding SaveCommand}"/>
             <Button Text="Cancel"/>
         </HorizontalStackLayout>
     </Grid>

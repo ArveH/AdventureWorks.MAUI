@@ -1,17 +1,16 @@
-using AdventureWorks.EntityLayer;
-using AdventureWorks.ViewModelLayer;
+using AdventureWorks.MAUI.CommandClasses;
 
 namespace AdventureWorks.MAUI.Views;
 
 public partial class UserDetailView : ContentPage
 {
-	public UserDetailView(UserViewModel viewModel)
+	public UserDetailView(UserViewModelCommands viewModel)
 	{
 		InitializeComponent();
         ViewModel = viewModel;
     }
 
-	public UserViewModel? ViewModel { get; set; }
+	public UserViewModelCommands? ViewModel { get; set; }
 
     protected override void OnAppearing()
     {
@@ -22,10 +21,5 @@ public partial class UserDetailView : ContentPage
         ViewModel.GetPhoneTypes();
 
         ViewModel.Get(1);
-    }
-
-    private void SaveButton_Clicked(object? sender, EventArgs e)
-    {
-        System.Diagnostics.Debugger.Break();
     }
 }
