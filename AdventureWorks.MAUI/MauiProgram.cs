@@ -31,6 +31,7 @@ namespace AdventureWorks.MAUI
 
             builder.Services.AddScoped<UserViewModelCommands>();
             builder.Services.AddScoped<UserDetailView>();
+            builder.Services.AddScoped<UserListView>();
 
 #if WINDOWS
       //SetWindowOptions(builder);

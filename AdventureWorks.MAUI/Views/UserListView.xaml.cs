@@ -1,14 +1,24 @@
+using AdventureWorks.MAUI.CommandClasses;
+
 namespace AdventureWorks.MAUI.Views;
 
 public partial class UserListView : ContentPage
 {
-  public UserListView()
-  {
-    InitializeComponent();
-  }
+    public UserListView(UserViewModelCommands viewModel)
+    {
+        InitializeComponent();
 
-  private async void NavigateToDetail_Clicked(object? sender, EventArgs e)
-  {
-      await Shell.Current.GoToAsync(nameof(UserDetailView));
-  }
+        ViewModel = viewModel;
+    }
+
+    private readonly UserViewModelCommands ViewModel;
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        BindingContext = ViewModel;
+
+        ViewModel.Get();
+    }
 }
