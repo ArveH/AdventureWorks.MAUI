@@ -2,15 +2,18 @@ using AdventureWorks.MAUI.CommandClasses;
 
 namespace AdventureWorks.MAUI.Views;
 
+[QueryProperty(nameof(UserId), "id")]
 public partial class UserDetailView : ContentPage
 {
-	public UserDetailView(UserViewModelCommands viewModel)
-	{
-		InitializeComponent();
+    public UserDetailView(UserViewModelCommands viewModel)
+    {
+        InitializeComponent();
+
         ViewModel = viewModel;
     }
 
-	public UserViewModelCommands? ViewModel { get; set; }
+    public UserViewModelCommands? ViewModel { get; set; }
+    public int UserId { get; set; }
 
     protected override void OnAppearing()
     {
@@ -20,6 +23,6 @@ public partial class UserDetailView : ContentPage
 
         ViewModel.GetPhoneTypes();
 
-        ViewModel.Get(1);
+        ViewModel.Get(UserId);
     }
 }
