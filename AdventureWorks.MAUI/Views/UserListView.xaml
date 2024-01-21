@@ -17,20 +17,20 @@
             </Grid.RowDefinitions>
 
             <partial:HeaderView ViewTitle="User List"
-                                ViewDescription="The list of users in the system." />
+                          ViewDescription="The list of users in the system." />
 
             <ListView Grid.Row="1"
-                      ItemsSource="{Binding UserList}">
+                ItemsSource="{Binding UserList}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:User">
                         <ViewCell>
                             <Frame Margin="8"
-                                   Padding="12">
+                     Padding="12">
                                 <VerticalStackLayout Spacing="4">
                                     <HorizontalStackLayout>
                                         <Label FontAttributes="Bold"
-                                               FontSize="Title"
-                                               Text="{Binding LastNameFirstName}" />
+                           FontSize="Title"
+                           Text="{Binding LastNameFirstName}" />
                                     </HorizontalStackLayout>
                                     <HorizontalStackLayout>
                                         <Label Text="Email" />
@@ -38,8 +38,8 @@
                                     </HorizontalStackLayout>
                                     <HorizontalStackLayout Margin="5,10,5,5">
                                         <Button Text="Edit"
-                                                CommandParameter="{Binding UserId}"
-                                                Command="{Binding Source={x:Reference UserListPage}, Path=BindingContext.EditCommand}" />
+                            CommandParameter="{Binding UserId}"
+                            Command="{Binding Source={x:Reference UserListPage}, Path=BindingContext.EditCommand}" />
                                         <Button Text="Delete" />
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>
