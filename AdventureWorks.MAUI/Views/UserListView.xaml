@@ -24,11 +24,26 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:User">
                         <ViewCell>
-                            <HorizontalStackLayout>
-                                <Label FontAttributes="Bold"
-                                   FontSize="Title"
-                                   Text="{Binding LastNameFirstName}" />
-                            </HorizontalStackLayout>
+                            <Frame Margin="8"
+                                   Padding="12">
+                                <VerticalStackLayout Spacing="4">
+                                    <HorizontalStackLayout>
+                                        <Label FontAttributes="Bold"
+                                               FontSize="Title"
+                                               Text="{Binding LastNameFirstName}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label Text="Email" />
+                                        <Label Text="{Binding Email}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Margin="5,10,5,5">
+                                        <Button Text="Edit"
+                                                CommandParameter="{Binding UserId}"
+                                                Command="{Binding Source={x:Reference UserListPage}, Path=BindingContext.EditCommand}" />
+                                        <Button Text="Delete" />
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
