@@ -19,6 +19,8 @@ public partial class UserDetailView : ContentPage
 
         BindingContext = ViewModel;
 
+        ViewModel.GetPhoneTypes();
+
         ViewModel.Get(1);
     }
 

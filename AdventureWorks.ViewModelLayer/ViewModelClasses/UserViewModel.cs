@@ -16,32 +16,44 @@ public class UserViewModel : ViewModelBase
       Repository = repo;
   }
 
-  //public UserViewModel(IRepository<User> repo, IRepository<PhoneType> phoneRepo) : base()
-  //{
-  //    Repository = repo;
-  //    _PhoneTypeRepository = phoneRepo;
-  //}
-  #endregion
-
-  #region Private Variables
-    private User? _UserObject = new();
-  private readonly IRepository<User>? Repository;
-  #endregion
-
-  #region Public Properties
-  public User? UserObject
-  {
-    get { return _UserObject; }
-    set
+    public UserViewModel(IRepository<User> repo, IRepository<PhoneType> phoneRepo) : base()
     {
-      _UserObject = value;
-      RaisePropertyChanged(nameof(UserObject));
+        Repository = repo;
+        _PhoneTypeRepository = phoneRepo;
     }
-  }
+    #endregion
+
+    #region Private Variables
+    private User? _UserObject = new();
+    private readonly IRepository<User>? Repository;
+    private readonly IRepository<PhoneType>? _PhoneTypeRepository;
+    private ObservableCollection<string> _PhoneTypesList = new();
   #endregion
 
-  #region Get Method
-  public ObservableCollection<User> Get()
+    #region Public Properties
+    public User? UserObject
+    {
+        get { return _UserObject; }
+        set
+        {
+          _UserObject = value;
+          RaisePropertyChanged(nameof(UserObject));
+        }
+    }
+
+    public ObservableCollection<string> PhoneTypesList
+    {
+        get { return _PhoneTypesList; }
+        set
+        {
+            _PhoneTypesList = value;
+            RaisePropertyChanged(nameof(PhoneTypesList));
+        }
+    }
+    #endregion
+
+    #region Get Method
+    public ObservableCollection<User> Get()
   {
     return new();
   }
@@ -87,10 +99,24 @@ public class UserViewModel : ViewModelBase
 
     return UserObject;
   }
-  #endregion
-  
-  #region Save Method
-  public virtual bool Save()
+    #endregion
+
+    #region GetPhoneTypes Method
+    public ObservableCollection<string> GetPhoneTypes()
+    {
+        if (_PhoneTypeRepository != null)
+        {
+            var list = _PhoneTypeRepository.Get();
+
+            PhoneTypesList = new ObservableCollection<string>(list.Select(row => row.TypeDescription));
+        }
+
+        return PhoneTypesList;
+    }
+    #endregion
+
+    #region Save Method
+    public virtual bool Save()
   {
     // TODO: Write code to save data
     System.Diagnostics.Debugger.Break();

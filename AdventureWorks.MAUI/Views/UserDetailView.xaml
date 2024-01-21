@@ -121,7 +121,7 @@
                        Text="{Binding UserObject.Phone}"/>
             </HorizontalStackLayout>
             <HorizontalStackLayout>
-                <Picker ItemsSource="{StaticResource PhoneTypes}"
+                <Picker ItemsSource="{Binding PhoneTypesList}"
                         SelectedItem="{Binding UserObject.PhoneType}"/>
             </HorizontalStackLayout>
         </FlexLayout>
