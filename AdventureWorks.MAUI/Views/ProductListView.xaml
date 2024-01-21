@@ -9,7 +9,7 @@
              x:Name="ProductListPage"
              Title="ProductListView">
 
-    <Border Style="{StaticResource Screen.Border}">
+    <Border Style="{StaticResource Border.Page}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

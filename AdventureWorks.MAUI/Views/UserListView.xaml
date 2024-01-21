@@ -9,7 +9,7 @@
              x:Name="UserListPage"
              Title="User List">
 
-    <Border Style="{StaticResource Screen.Border}">
+    <Border Style="{StaticResource Border.Page}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -19,14 +19,14 @@
             <partial:HeaderView ViewTitle="User List"
                           ViewDescription="The list of users in the system." />
 
-            <ListView Grid.Row="1"
-                ItemsSource="{Binding UserList}">
-                <ListView.ItemTemplate>
+            <CollectionView Grid.Row="1"
+                            SelectionMode="Single"
+                            ItemsSource="{Binding UserList}">
+                <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:User">
-                        <ViewCell>
-                            <Frame Margin="8"
-                     Padding="12">
-                                <VerticalStackLayout Spacing="4">
+                        <Frame Margin="8"
+                               Padding="12">
+                            <VerticalStackLayout Spacing="4">
                                     <HorizontalStackLayout>
                                         <Label FontAttributes="Bold"
                            FontSize="Title"
@@ -43,11 +43,10 @@
                                         <Button Text="Delete" />
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>
-                            </Frame>
-                        </ViewCell>
+                        </Frame>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </Grid>
     </Border>
 
