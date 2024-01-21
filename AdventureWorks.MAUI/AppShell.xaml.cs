@@ -9,6 +9,10 @@
             Routing.RegisterRoute(
                 nameof(Views.UserDetailView), 
                 typeof(Views.UserDetailView));
+            Routing.RegisterRoute(
+                nameof(Views.ProductDetailView), 
+                typeof(Views.ProductDetailView));
+
         }
     }
 }

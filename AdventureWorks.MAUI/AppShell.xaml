@@ -20,7 +20,7 @@
         <ShellContent
             Title="Products"
             ContentTemplate="{DataTemplate views:ProductListView}"
-            Route="ProductDetailView" />
+            Route="ProductListView" />
         <ShellContent
             Title="Customers"
             ContentTemplate="{DataTemplate views:CustomerDetailView}"
