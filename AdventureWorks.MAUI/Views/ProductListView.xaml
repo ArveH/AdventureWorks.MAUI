@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdventureWorks.MAUI.Views.ProductListView"
+             xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
+             xmlns:vm="clr-namespace:AdventureWorks.MAUI.CommandClasses"
+             xmlns:model="clr-namespace:AdventureWorks.EntityLayer;assembly=AdventureWorks.EntityLayer"
+             x:DataType="vm:ProductViewModelCommands"
+             x:Name="ProductListPage"
+             Title="ProductListView">
+
+    <Border Style="{StaticResource Screen.Border}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <partial:HeaderView ViewTitle="Product List"
+                          ViewDescription="The list of products in the system." />
+
+            <CollectionView Grid.Row="1"
+                      SelectionMode="Single"
+                      ItemsSource="{Binding ProductList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Product">
+                        <Frame Margin="8"
+                   Padding="12">
+                            <VerticalStackLayout Spacing="4">
+                                <HorizontalStackLayout>
+                                    <Label FontAttributes="Bold"
+                         FontSize="Title"
+                         Text="{Binding Name}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Color:" />
+                                    <Label Text="{Binding Color}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Price:" />
+                                    <Label Text="{Binding ListPrice, StringFormat='{0:c}'}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Margin="5,10,5,5">
+                                    <Button Text="Edit"
+                          CommandParameter="{Binding ProductID}"
+                          Command="{Binding Source={x:Reference ProductListPage}, Path=BindingContext.EditCommand}" />
+                                    <Button Text="Delete" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Border>
+
+</ContentPage>
