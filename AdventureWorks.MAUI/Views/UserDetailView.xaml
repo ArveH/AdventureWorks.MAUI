@@ -148,7 +148,8 @@
 
         <HorizontalStackLayout Grid.Row="15"
                                Grid.Column="1">
-            <Button Text="Save"/>
+            <Button Text="Save"
+                    Clicked="SaveButton_Clicked"/>
             <Button Text="Cancel"/>
         </HorizontalStackLayout>
     </Grid>

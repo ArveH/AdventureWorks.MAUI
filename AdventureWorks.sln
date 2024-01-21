@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.MAUI", "Adve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.EntityLayer", "AdventureWorks.EntityLayer\AdventureWorks.EntityLayer.csproj", "{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Library", "Common.Library\Common.Library.csproj", "{7C2202F9-F886-47CE-B308-F10981C05ACE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7E30EBD-62C1-45FC-9EC3-BF85DA89DFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C2202F9-F886-47CE-B308-F10981C05ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C2202F9-F886-47CE-B308-F10981C05ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C2202F9-F886-47CE-B308-F10981C05ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C2202F9-F886-47CE-B308-F10981C05ACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
