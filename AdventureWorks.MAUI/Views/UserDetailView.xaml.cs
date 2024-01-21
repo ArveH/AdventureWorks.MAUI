@@ -5,9 +5,10 @@ namespace AdventureWorks.MAUI.Views;
 
 public partial class UserDetailView : ContentPage
 {
-	public UserDetailView()
+	public UserDetailView(UserViewModel viewModel)
 	{
 		InitializeComponent();
+        ViewModel = viewModel;
     }
 
 	public UserViewModel? ViewModel { get; set; }
@@ -15,8 +16,6 @@ public partial class UserDetailView : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-
-        ViewModel = new();
 
         BindingContext = ViewModel;
 

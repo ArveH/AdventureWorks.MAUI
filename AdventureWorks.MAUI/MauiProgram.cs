@@ -1,4 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AdventureWorks.DataLayer;
+using AdventureWorks.EntityLayer;
+using AdventureWorks.MAUI.Views;
+using AdventureWorks.ViewModelLayer;
+using Common.Library;
+using Microsoft.Extensions.Logging;
 
 #if WINDOWS
 using Microsoft.Maui.LifecycleEvents;
@@ -18,6 +23,13 @@ namespace AdventureWorks.MAUI
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            builder.Services.AddScoped<IRepository<User>, UserRepository>();
+            builder.Services.AddScoped<IRepository<EntityLayer.Color>, ColorRepository>();
+            builder.Services.AddScoped<IRepository<PhoneType>, PhoneTypeRepository>();
+
+            builder.Services.AddScoped<UserViewModel>();
+            builder.Services.AddScoped<UserDetailView>();
 
 #if WINDOWS
       //SetWindowOptions(builder);

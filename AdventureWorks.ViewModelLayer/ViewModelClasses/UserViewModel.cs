@@ -6,8 +6,26 @@ namespace AdventureWorks.ViewModelLayer;
 
 public class UserViewModel : ViewModelBase
 {
+  #region Constructors
+  public UserViewModel() : base()
+  {
+  }
+
+  public UserViewModel(IRepository<User> repo) : base()
+  {
+      Repository = repo;
+  }
+
+  //public UserViewModel(IRepository<User> repo, IRepository<PhoneType> phoneRepo) : base()
+  //{
+  //    Repository = repo;
+  //    _PhoneTypeRepository = phoneRepo;
+  //}
+  #endregion
+
   #region Private Variables
-  private User? _UserObject = new();
+    private User? _UserObject = new();
+  private readonly IRepository<User>? Repository;
   #endregion
 
   #region Public Properties
@@ -39,7 +57,10 @@ public class UserViewModel : ViewModelBase
   {
     try {
       // Get a User from a data store
-      {
+      if (Repository != null) {
+        UserObject = Repository.Get(id);
+      }
+      else {
         // MOCK Data
         UserObject = new User {
           UserId = id,
